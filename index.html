@@ -303,10 +303,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-07-31 20:51:50 / 修改时间：21:28:46" itemprop="dateCreated datePublished" datetime="2020-07-31T20:51:50+08:00">2020-07-31</time>
+              <time title="创建时间：2020-07-31 20:51:50" itemprop="dateCreated datePublished" datetime="2020-07-31T20:51:50+08:00">2020-07-31</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-07 15:54:31" itemprop="dateModified" datetime="2020-08-07T15:54:31+08:00">2020-08-07</time>
+              </span>
 
           
 
@@ -400,7 +406,7 @@
 <p>awk 将每一行看做由多个字段(field)组成的整体，每一个字段之间被字段分隔符(field sepatator)分隔开。默认情况下，分隔符就是一个或多个空格。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this is a line of text</span><br></pre></td></tr></table></figure>
 
-<p>上面的文字包含 6 个字段。在 awk 中，第一个字段(或者说单词)被成为 <code>$1</code>，第二个 <code>$2</code>，以此类推。整行则被称为 <code>$0</code>。字段分隔符由 awk 的内置变量 <strong>FS</strong> (field sepatator)设置，所以如果你设置 <code>FS=&quot;:&quot;</code>，那么它就会把整行使用 <code>:</code> 分隔，这在一些场景中很有用，比如 <code>/etc/passwd</code> 文件中。另内部变量还有 <strong>NR</strong> (number of recorded)也就是文件的行数，和 <strong>NF</strong> (number of fields) 字段在该行的数字。</p>
+<p>上面的文字包含 6 个字段。在 awk 中，第一个字段(或者说单词)被成为 <code>$1</code>，第二个 <code>$2</code>，以此类推。整行则被称为 <code>$0</code>。字段分隔符由 awk 的内置变量 <strong>FS</strong> (field sepatator)设置，所以如果你设置 <code>FS=&quot;:&quot;</code>，那么它就会把整行使用 <code>:</code> 分隔，这在一些场景中很有用，比如 <code>/etc/passwd</code> 文件中。另内部变量还有 <strong>NR</strong> (number of recorded)也就是文件的行数，和 <strong>NF</strong> (number of fields) 字段在该行的数字(或该行字段个数)。</p>
 <p>awk 可以在任何文件上操作，包括标准输入，在这种情况下它通常和管道符 <code>|</code> 一起使用，比如在和 grep 命令联合使用时。举例来说，如果我在一个目录中列出所有文件:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[mijp1@monty RandomNumbers]$ ls -l</span><br><span class="line">total 2648</span><br><span class="line">-rw------- 1 mijp1 mijp1 12817 Oct 22 00:13 normal_rand.agr</span><br><span class="line">-rw------- 1 mijp1 mijp1 6948 Oct 22 00:17 random_numbers.f90</span><br><span class="line">-rw------- 1 mijp1 mijp1 470428 Oct 21 11:56 uniform_rand_231.agr</span><br><span class="line">-rw------- 1 mijp1 mijp1 385482 Oct 21 11:54 uniform_rand_232.agr</span><br><span class="line">-rw------- 1 mijp1 mijp1 289936 Oct 21 11:59 uniform_rand_period_1.agr</span><br><span class="line">-rw------- 1 mijp1 mijp1 255510 Oct 21 12:07 uniform_rand_period_2.agr</span><br><span class="line">-rw------- 1 mijp1 mijp1 376196 Oct 21 12:07 uniform_rand_period_3.agr</span><br><span class="line">-rw------- 1 mijp1 mijp1 494666 Oct 21 12:09 uniform_rand_period_4.agr</span><br><span class="line">-rw------- 1 mijp1 mijp1 376286 Oct 21 12:05 uniform_rand_period.agr</span><br></pre></td></tr></table></figure>
 
